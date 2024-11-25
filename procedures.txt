@@ -1,0 +1,23 @@
+---426 Fetching Data in a Page 
+https://jsonplaceholder.typicode.com/
+
+export default async function Page() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/users")
+  const data = await res.json()
+  console.log(data) 
+  return (
+    <div>
+      <h1>Cabins Page</h1>
+      <ul>
+        {data.map((user) => (
+          <li key={user.id}>{user.name}</li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+Data is not logged to browser console. It is logged to the Server's terminal
+View Page source shows that the users are already in the html that is downloaded from the server. 
+Network tab, Reload, Fetch/XHR shows that client does not fetch the data. The server fetches the data.
+RSC - fetch data and render it as html in a react component
