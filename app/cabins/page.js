@@ -1,4 +1,5 @@
 import CabinCard from "@/app/_components/CabinCard"
+import { getCabins } from "../_lib/data-service"
 
 // import Counter from "../_components/Counter"
 export const metadata = {
@@ -6,7 +7,9 @@ export const metadata = {
 }
 
 export default async function Page() {
-  const cabins = []
+  const cabins = await getCabins()
+  console.log("stargin...")
+  console.log(cabins)
   return (
     <div>
       <h1 className="text-4xl mb-5 text-accent-400 font-medium">
