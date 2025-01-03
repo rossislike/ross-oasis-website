@@ -14,7 +14,7 @@ export const revalidate = 3600
 
 export default function Page({ searchParams }) {
   const filter = searchParams?.capacity ?? "all"
-  console.log(filter)
+  // console.log(filter)
   return (
     <div>
       <h1 className="text-4xl mb-5 text-accent-400 font-medium">
