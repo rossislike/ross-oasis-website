@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache"
 import { auth, signIn, signOut } from "./auth"
 import { supabase } from "./supabase"
+import { getBookings } from "./data-service"
 
 export async function deleteReservation(bookingId) {
   const session = await auth()
