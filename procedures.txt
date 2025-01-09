@@ -21,3 +21,13 @@ Data is not logged to browser console. It is logged to the Server's terminal
 View Page source shows that the users are already in the html that is downloaded from the server. 
 Network tab, Reload, Fetch/XHR shows that client does not fetch the data. The server fetches the data.
 RSC - fetch data and render it as html in a react component
+
+--486 Updating a Reservation 
+ReservationCard 
+- Implement a route for /account/reservations/edit/${id}
+- Get the reservation-edit page from the starter files
+  - Get the current booking that you are trying to edit - data-service - getBooking
+  - Create a new server action called updateReservation - add the server action to the form with all fields passed in with the correct name - note user authentication so that a user can only edit their own reservations
+  - Pass the bookingId into the form action - add a hidden field (input with type set to hidden, set value prop to bookingId) to the form - use updateBooking code in data-service
+  - Redirect back to the reservation page - use the redirect function from next/navigation (read documentation)
+  - Revalidate the correct cache before redirecting
