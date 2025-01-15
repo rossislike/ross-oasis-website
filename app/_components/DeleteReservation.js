@@ -1,7 +1,7 @@
 "use client"
 import { TrashIcon } from "@heroicons/react/24/solid"
 import { useTransition } from "react"
-import SpinnerMini from "@/starter/components/SpinnerMini"
+import Spinner from "./Spinner"
 
 function DeleteReservation({ bookingId, onDelete }) {
   const [isPending, startTransition] = useTransition()
@@ -24,7 +24,7 @@ function DeleteReservation({ bookingId, onDelete }) {
         </>
       ) : (
         <span className="mx-auto">
-          <SpinnerMini />
+          <Spinner />
         </span>
       )}
     </button>
